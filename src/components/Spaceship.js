@@ -7,8 +7,8 @@ class Spaceship extends React.Component {
       <div className="starWars-Spaceship">
         <p> name={this.props.name} </p>
         <p> speed={this.props.speed} </p>
-        <p> hasRockets={this.props.hasRockets} </p>
-        <p> colors={this.props.colors} </p>
+        <p> hasRockets={this.props.hasRockets ? true : false} </p>
+        <p> colors={this.props.colors.join(', ')} </p>
       </div>
     );
   }
@@ -19,14 +19,5 @@ Spaceship.defaultProps = {
   hasRockets: false,
   colors: ['black', 'red']
 };
-
-ReactDOM.render(
-  <Spaceship
-    name="Millennium Falcon"
-    speed={500}
-    colors={['green', 'magenta']}
-  />,
-  document.getElementById('root')
-);
 
 export default Spaceship;
